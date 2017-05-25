@@ -4,10 +4,111 @@
 <head>
   <meta charset="utf-8">
   <title>Music History</title>
+  <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
+	<nav id="main">
+		<ul>
 
+			<li><a href="index.html" class="selected">List Music</a></li>
+			<li><a href="#">Add Music</a></li>
+
+		</ul>
+	</nav>
+
+	<form type="submit">
+	<div id="form">
+		<section id="length">
+			<label for="songlength">Song length:<br/></label>
+			<input type="range" max="5" min="0" value="0" id="songlength">
+		</section>
+		<section id="artist">
+			<label for="artistSelect">Artists:<br/></label>
+			<select id="artistSelect">
+				<option name="chainsmokers" id="option1">The Chainsmokers</option>
+				<option name="sheeran" id="option2">Ed Sheeran</option>
+				<option name="sia" id="option3">Sia</option>
+				<option name="abovebeyond" id="option4">Above and Beyond</option>
+				<option name="ariana" id="option5">Ariana Grande</option>
+			</select>
+		</section>
+		<section id="album">
+			<label>Album:<br/></label>
+			<select id="albumSelect">
+				<option name="closer" id="opt1">Closer</option>
+				<option name="cheapthrills" id="opt2">Cheap Thrills</option>
+				<option name="grouptherapy" id="opt3">Group Therapy</option>
+				<option name="dangerouswoman" id="opt4">Dangerous Woman</option>
+				<option name="songiwrote" id="opt5">Song I wrote with Amy</option>
+			</select>
+		</section>
+		<section id="selectGenre">
+			<label>Genre:<br/></label>
+			<div>
+			<input type="checkbox" name="genre" id="rock" value="rock">
+			<label for="rock">Rock</label>
+			</div>
+			<div>
+			<input type="checkbox" name="genre" id="classical" value="classical">
+			<label for="classical">Classical</label>
+			</div>
+			<div>
+			<input type="checkbox" name="genre" id="pop" value="pop">
+			<label for="pop">Pop</label>
+			</div>
+			<div>
+			<input type="checkbox" name="genre" id="jazz" value="jazz">
+			<label for="jazz">Jazz</label>
+			</div>
+			<div>
+			<input type="checkbox" name="genre" id="blues" value="blues">
+			<label for="blues">Blues</label>
+			</div>
+			<div>
+			<input type="checkbox" name="genre" id="hiphop" value="hiphop">
+			<label for="hiphop">Hip Hop</label>
+			</div>
+		</section>
+		<section id="button">
+			<button type="submit" name="filter" id="filter">Filter</button>
+		</section>
+	</div>
+	</form>
+	<div id="display">
+		<section class="inline">
+			<header><h1>Song Name</h1></header>
+			<ul>
+				<li>Artist name</li>
+				<li>Album name</li>
+				<li>Genre</li>
+			</ul>
+		</section>
+		<section class="inline">
+			<header><h1>Song Name</h1></header>
+			<ul>
+				<li>Artist name</li>
+				<li>Album name</li>
+				<li>Genre</li>
+			</ul>
+		</section>
+		<section class="inline">
+			<header><h1>Song Name</h1></header>
+			<ul>
+				<li>Artist name</li>
+				<li>Album name</li>
+				<li>Genre</li>
+			</ul>
+		</section>
+		<section class="inline">
+			<header><h1>Song Name</h1></header>
+			<ul>
+				<li>Artist name</li>
+				<li>Album name</li>
+				<li>Genre</li>
+			</ul>
+		</section>
+	</div>
 
 </body>
 </html>
