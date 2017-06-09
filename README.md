@@ -22,3 +22,34 @@ Visit the [Music History mockup](https://moqups.com/chortlehoort/1E8LJX7r/) that
 ## Completing
 
 Once you are done, make sure you add your files to git, make a commit, and then push your new code up to Github with the following command `git push origin master`.
+<header><h1>Song Name</h1></header>
+			<ul>
+				<li>Artist name</li>
+				<li>Album name</li>
+				<li>Genre</li>
+			</ul>
+		</section>
+		<section class="inline">
+			<header><h1>Song Name</h1></header>
+			<ul>
+				<li>Artist name</li>
+				<li>Album name</li>
+				<li>Genre</li>
+			</ul>
+		</section>
+		<section class="inline">
+			<header><h1>Song Name</h1></header>
+			<ul>
+				<li>Artist name</li>
+				<li>Album name</li>
+				<li>Genre</li>
+			</ul>
+		</section>
+		<section class="inline">
+			<header><h1>Song Name</h1></header>
+			<ul>
+				<li>Artist name</li>
+				<li>Album name</li>
+				<li>Genre</li>
+			</ul>
+		</section>

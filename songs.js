@@ -23,11 +23,43 @@ songs[songs.length] = "Another Brick in the Wall > by Pink Floyd on the album Th
 songs[songs.length] = "Welco(me to the Jungle > by Guns & Roses on the album Appetite for Destruction";
 songs[songs.length] = "Ironi!c > by Alanis Moris*ette on the album Jagged Little Pill";
 
-songs.push("Cheap thrills by Sia");
-songs.unshift("Closer by The Chain Smokers");
-
-for(var i=0; i<songs.length; i++)
+// songs.push("Cheap thrills by Sia");
+// songs.unshift("Closer by The Chain Smokers");
+var msg = ""
+var temp;
+function songCreator()
 {
-	songs[i]
+	for(var i=0; i<songs.length; i++)
+	{
+		msg += "<section class = 'inline'><header><h3>";
+		songs[i] = songs[i].replace(/[*@()!]/g,"");
+		// console.log("1. ",songs[i]);	
+		songs[i] = songs[i].replace(/ > by /g,"-");
+		// console.log("2. ",songs[i]);	
+		songs[i] = songs[i].replace(/-/g,'</h3></header><ul><li>');
+		// console.log("3. ",songs[i]);	
+		songs[i] = songs[i].replace(/ on the album /g,'</li><li>');
+		// console.log("4. ",songs[i]);	
+		temp = '</li></ul></section>';
+		// console.log("5. ",songs[i]);	
+		msg = msg + songs[i] + temp;
+		// console.log(msg);
+	}
+	return msg;
 }
-console.log(songs);
+
+getDiv = document.getElementById('display');
+getDiv.innerHTML = songCreator();
+
+// Add each string to the DOM in index.html in the main content area.
+// functio
+
+// function createMusicBlock(songs[i])
+// {
+// 	var text = `<section class="inline">
+// 					<header><h1>${}`
+
+
+// }
+
+// createMusicBlock();
