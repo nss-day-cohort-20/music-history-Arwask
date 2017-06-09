@@ -41,26 +41,30 @@ FORM
 	border: 3px solid black;
 	display: inline-block;
 	float: left;
-	width: 30%;
+	width: 33%;
 	margin: 2% 0 2% 0;
 	padding: 10px;
 	height: 380px;
+	overflow: hidden;
 }
 #form > section
 {
 	padding-bottom: 25px;
 }
-
+#songlength
+{
+	width: 100%;
+}
 #artistSelect, #albumSelect
 {
 	border-radius: 5px;
-	width: 150px; 
+	width: 100%; 
 	border :3px solid black;
 }
 
 #selectGenre > div
 {
-	width: 50%;
+	width: 100%;
 	display: inline-block;
 	float: left;
 }
@@ -73,24 +77,27 @@ FORM
 #filter
 {
 	border: 3px solid black;
-	padding: 5px 40px 5px 40px;
+	/*padding: 5px 40px 5px 40px;*/
 	margin: 0;
-	font-size: 1.1em;
+	padding: 0;
 	border-radius: 5px;
+
 }
 
 #button
 {
-	margin: 0 auto;
-	float: center;
+	/*margin: 0 auto;*/
+	/*float: center;*/
+	width: 100%;
+	height: 15px;
 }
 #button #filter
 {
-
 	display: block;
-	margin: auto;
-	width: 50%;
-	height: 50px;
+	/*margin: auto;*/
+	width: 100%;
+	height: 30px;
+	margin-bottom: 10px;
 }
 
 
@@ -101,30 +108,22 @@ Display
 {
 	background-color: #fefac0;
 	border: 3px solid black;
-	width: 63%;
+	width: 57%;
 	float:right;
 	margin: 2% 0 2% 2%;
-	overflow: none;
+	overflow: scroll;
 	height: 400px;
+
 }
 
 .inline li
 {
 	list-style: none;
-	display: inline-block;
 	padding-right: 15px; 
 	font-size: 1.2em;
 	text-align: left;
 }
 
-.inline li:nth-of-type(1)
-{
-	border-right: 1px solid black;
-}
-.inline li:nth-of-type(2)
-{
-	border-right: 1px solid black;
-}
 .inline
 {
 	margin: 1px;
@@ -139,4 +138,36 @@ Display
 {
 	
 	text-align: left;
+}
+
+@media screen and (min-width: 960px) /* for laptops screens and bigger */
+{
+	.inline li:nth-of-type(1)
+	{
+		border-right: 1px solid black;
+	}
+	.inline li:nth-of-type(2)
+	{
+		border-right: 1px solid black;
+	}
+
+	.inline li
+	{
+		display: inline-block;
+	}
+
+	body
+	{
+		font-size: 1.2em;
+	}
+
+	/*#display
+	{
+		text-align: center;
+	}*/
+}
+
+@media screen and (min-width: 480px) /*for tabs*/
+{
+
 }
