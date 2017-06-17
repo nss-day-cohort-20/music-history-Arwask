@@ -2,17 +2,17 @@
 {
 	list-style: none;
 	display: inline-flex;
-		
+
 }
 #main
 {
-	border: 3px solid black;	
+	border: 3px solid black;
 	height: 50px;
 	background-color: #ffb4b0;
 }
-#main li a 
+#main li a
 {
-	padding-right: 15px; 
+	padding-right: 15px;
 	padding-left: 15px;
 	font-size: 1.2em;
 }
@@ -23,7 +23,7 @@
 }
 body
 {
-	width: 80%;
+	width: 60%;
 	margin: auto;
 }
 .selected
@@ -41,15 +41,15 @@ FORM
 	border: 3px solid black;
 	display: inline-block;
 	float: left;
-	width: 33%;
-	margin: 2% 0 2% 0;
+	width: 25%;
+	margin: 1% 0 1% 0;
 	padding: 10px;
 	height: 380px;
 	overflow: hidden;
 }
 #form > section
 {
-	padding-bottom: 25px;
+	padding: 10px 10px 10px 25px;
 }
 #songlength
 {
@@ -58,14 +58,14 @@ FORM
 #artistSelect, #albumSelect
 {
 	border-radius: 5px;
-	width: 100%; 
+	width: 100%;
 	border :3px solid black;
 }
 
 #selectGenre > div
 {
-	width: 100%;
-	display: inline-block;
+	width: 50%;
+	display: inline-flex;
 	float: left;
 }
 
@@ -77,11 +77,9 @@ FORM
 #filter
 {
 	border: 3px solid black;
-	/*padding: 5px 40px 5px 40px;*/
-	margin: 0;
-	padding: 0;
 	border-radius: 5px;
-
+	width: 50%;
+	margin: auto;
 }
 
 #button
@@ -95,7 +93,7 @@ FORM
 {
 	display: block;
 	/*margin: auto;*/
-	width: 100%;
+	width: 50%;
 	height: 30px;
 	margin-bottom: 10px;
 }
@@ -108,9 +106,9 @@ Display
 {
 	background-color: #fefac0;
 	border: 3px solid black;
-	width: 57%;
+	width: 70%;
 	float:right;
-	margin: 2% 0 2% 2%;
+	margin: 1% 0 1% 1%;
 	overflow: scroll;
 	height: 400px;
 
@@ -119,7 +117,7 @@ Display
 .inline li
 {
 	list-style: none;
-	padding-right: 15px; 
+	padding-right: 15px;
 	font-size: 1.2em;
 	text-align: left;
 }
@@ -136,7 +134,7 @@ Display
 }
 .inline li
 {
-	
+
 	text-align: left;
 }
 
