@@ -32,18 +32,12 @@ function songCreator()
 	for(var i=0; i<songs.length; i++)
 	{
 		msg += "<section class = 'inline'><header><h3>";
-		songs[i] = songs[i].replace(/[*@()!]/g,"");
-		// console.log("1. ",songs[i]);	
+		songs[i] = songs[i].replace(/[*@()!]/g,"");	
 		songs[i] = songs[i].replace(/ > by /g,"-");
-		// console.log("2. ",songs[i]);	
 		songs[i] = songs[i].replace(/-/g,'</h3></header><ul><li>');
-		// console.log("3. ",songs[i]);	
 		songs[i] = songs[i].replace(/ on the album /g,'</li><li>');
-		// console.log("4. ",songs[i]);	
 		temp = '</li></ul></section>';
-		// console.log("5. ",songs[i]);	
 		msg = msg + songs[i] + temp;
-		// console.log(msg);
 	}
 	return msg;
 }
@@ -51,15 +45,59 @@ function songCreator()
 getDiv = document.getElementById('display');
 getDiv.innerHTML = songCreator();
 
-// Add each string to the DOM in index.html in the main content area.
-// functio
+let addMusicDiv = document.getElementById('add-music');
+let addMusicLink = document.getElementById('addMusicLink');
+let listMusicDiv = document.getElementById('list-music');
+let listMusicLink = document.getElementById('listMusicLink');
+let addButton = document.getElementById('addButton');
 
-// function createMusicBlock(songs[i])
-// {
-// 	var text = `<section class="inline">
-// 					<header><h1>${}`
+addMusicLink.addEventListener('click', function()
+{
+	addMusicLink.classList.add('selected');
+	addMusicLink.classList.remove('clickable');
+	listMusicDiv.classList.toggle('isHidden');
+	addMusicDiv.classList.toggle('isHidden');
+	listMusicLink.classList.remove('selected');
+	listMusicLink.classList.add('clickable');
+})
 
+listMusicLink.addEventListener('click', function()
+{
+	addMusicLink.classList.remove('selected');
+	addMusicLink.classList.add('clickable');
+	listMusicDiv.classList.toggle('isHidden');
+	addMusicDiv.classList.toggle('isHidden');
+	listMusicLink.classList.remove('clickable');
+	listMusicLink.classList.add('selected')
+})
 
-// }
+addButton.addEventListener('click', function()
+{
+	let song = document.getElementById('songName').value;
+	let artist = document.getElementById('artistName').value;
+	console.log(artist);
+	let album = document.getElementById('albumName').value;
+	console.log(album);
+	addSong(song, artist, album);
+})
 
-// createMusicBlock();
+function addSong(song, artist, album)
+{
+	let section = document.createElement('section');
+	section.setAttribute('class','inline');
+	getDiv.appendChild(section);
+	let header = document.createElement('header');
+	section.appendChild(header);
+	let h3 = document.createElement('h3');
+	header.appendChild(h3);
+	h3.innerHTML = song;
+
+	let ul = document.createElement('ul');
+	section.appendChild(ul);
+	let li = document.createElement('li');
+	ul.appendChild(li);
+	li.innerHTML = artist;
+	let li2 = document.createElement('li');
+	ul.appendChild(li2);
+	li2.innerHTML = album;
+}

@@ -26,12 +26,6 @@ body
 	width: 60%;
 	margin: auto;
 }
-.selected
-{
-	text-decoration: none;
-	color: black;
-}
-
 /*******************
 FORM
 *******************/
@@ -49,7 +43,7 @@ FORM
 }
 #form > section
 {
-	padding: 10px 10px 10px 25px;
+	padding: 10px 10px 10px 0;
 }
 #songlength
 {
@@ -62,11 +56,10 @@ FORM
 	border :3px solid black;
 }
 
-#selectGenre > div
+#onlyCheckboxes > div
 {
-	width: 50%;
+	max-width: 100%;
 	display: inline-flex;
-	float: left;
 }
 
 #selectGenre
@@ -74,6 +67,15 @@ FORM
 	overflow: hidden;
 }
 
+#onlyCheckboxes
+{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	height: 200px;
+
+}
 #filter
 {
 	border: 3px solid black;
@@ -106,7 +108,7 @@ Display
 {
 	background-color: #fefac0;
 	border: 3px solid black;
-	width: 70%;
+	width: 68%;
 	float:right;
 	margin: 1% 0 1% 1%;
 	overflow: scroll;
@@ -164,8 +166,59 @@ Display
 		text-align: center;
 	}*/
 }
-
-@media screen and (min-width: 480px) /*for tabs*/
+/*******************
+Add Music
+*******************/
+#add-music
 {
+	border: 3px solid black;
+	margin-top: 10px;
+	align-content: center;
+}
 
+.aligners
+{
+	width: 90%;
+	margin: auto;
+	align-content: center;
+	padding: 10px 10px;
+	overflow: none;
+	display: inline-flex;
+}
+
+.aligners label
+{
+	width: 50%;
+	font-weight: 800;
+}
+.aligners input
+{
+	width: 50%;
+	border: 3px solid black;
+}
+
+#addButton
+{
+	border: 3px solid black;
+	font-weight: 900;
+	width: 40%;
+	border-radius: 10px;
+}
+.selected
+{
+	text-decoration: none;
+	color: black;
+	pointer-events: none;
+}
+
+.clickable
+{
+	color: blue;
+	font-style: underline;
+	pointer-events: all;
+}
+
+.isHidden
+{
+	display: none;
 }

@@ -11,12 +11,12 @@
 	<nav id="main">
 		<ul>
 
-			<li><a href="index.html" class="selected">List Music</a></li>
-			<li><a href="#">Add Music</a></li>
+			<li><a href="#" id="listMusicLink"  class="selected">List Music</a></li>
+			<li><a href="#" class="clickable" id="addMusicLink">Add Music</a></li>
 
 		</ul>
 	</nav>
-
+<div id="list-music">
 	<div id="form">
 		<section id="length">
 			<label for="songlength">Song length:<br/></label>
@@ -44,6 +44,7 @@
 		</section>
 		<section id="selectGenre">
 			<label>Genre:<br/></label>
+			<div id="onlyCheckboxes">
 			<div>
 			<input type="checkbox" name="genre" id="rock" value="rock">
 			<label for="rock">Rock</label>
@@ -68,12 +69,31 @@
 			<input type="checkbox" name="genre" id="hiphop" value="hiphop">
 			<label for="hiphop">Hip Hop</label>
 			</div>
+			</div>
 		</section>
 		<section id="button">
 			<button type="submit" name="filter" id="filter">Filter</button>
 		</section>
 	</div>
 	<div id="display"></div>
+</div>
+<div id="add-music" class="isHidden">
+	<div class="aligners">
+	<label for="songName">Song Name:</label>
+	<input type="text" name="songName" id="songName">
+	</div>
+	<div class="aligners">
+	<label for="artistName">Artist:</label>
+	<input type="text" name="artist" id="artistName">
+	</div>
+	<div class="aligners">
+	<label for="albumName">Album:</label>
+	<input type="text" name="album" id="albumName">
+	</div>
+	<div class="aligners">
+	<button id="addButton">Add</button>
+	</div>
+</div>
 	<script src="songs.js"></script>
 </body>
 </html>
