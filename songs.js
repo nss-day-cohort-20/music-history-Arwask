@@ -1,5 +1,6 @@
+{
 var songs = [];
-
+let request = new XMLHttpRequest;
 function songMaker(artist, album, genre)
 {
 	songMaker.artist = artist;
@@ -17,33 +18,33 @@ var song5 = songMaker("Sia", "Cheap Thrills", "Blues");
 
 songList = [song1, song2, song3, song4, song5];
 
-songs[songs.length] = "Legs > by Z*ZTop on the album Eliminator";
-songs[songs.length] = "The Logical Song > by Supertr@amp on the album Breakfast in America";
-songs[songs.length] = "Another Brick in the Wall > by Pink Floyd on the album The Wall";
-songs[songs.length] = "Welco(me to the Jungle > by Guns & Roses on the album Appetite for Destruction";
-songs[songs.length] = "Ironi!c > by Alanis Moris*ette on the album Jagged Little Pill";
+// songs[songs.length] = "Legs > by Z*ZTop on the album Eliminator";
+// songs[songs.length] = "The Logical Song > by Supertr@amp on the album Breakfast in America";
+// songs[songs.length] = "Another Brick in the Wall > by Pink Floyd on the album The Wall";
+// songs[songs.length] = "Welco(me to the Jungle > by Guns & Roses on the album Appetite for Destruction";
+// songs[songs.length] = "Ironi!c > by Alanis Moris*ette on the album Jagged Little Pill";
 
 // songs.push("Cheap thrills by Sia");
 // songs.unshift("Closer by The Chain Smokers");
-var msg = ""
-var temp;
-function songCreator()
-{
-	for(var i=0; i<songs.length; i++)
-	{
-		msg += "<section class = 'inline'><header><h3>";
-		songs[i] = songs[i].replace(/[*@()!]/g,"");	
-		songs[i] = songs[i].replace(/ > by /g,"-");
-		songs[i] = songs[i].replace(/-/g,'</h3></header><ul><li>');
-		songs[i] = songs[i].replace(/ on the album /g,'</li><li>');
-		temp = '</li></ul></section>';
-		msg = msg + songs[i] + temp;
-	}
-	return msg;
-}
+// var msg = ""
+// var temp;
+// function songCreator()
+// {
+// 	for(var i=0; i<songs.length; i++)
+// 	{
+// 		msg += "<section class = 'inline'><header><h3>";
+// 		songs[i] = songs[i].replace(/[*@()!]/g,"");	
+// 		songs[i] = songs[i].replace(/ > by /g,"-");
+// 		songs[i] = songs[i].replace(/-/g,'</h3></header><ul><li>');
+// 		songs[i] = songs[i].replace(/ on the album /g,'</li><li>');
+// 		temp = '</li></ul></section>';
+// 		msg = msg + songs[i] + temp;
+// 	}
+// 	return msg;
+// }
 
 getDiv = document.getElementById('display');
-getDiv.innerHTML = songCreator();
+// getDiv.innerHTML = songCreator();
 
 let addMusicDiv = document.getElementById('add-music');
 let addMusicLink = document.getElementById('addMusicLink');
@@ -100,4 +101,29 @@ function addSong(song, artist, album)
 	let li2 = document.createElement('li');
 	ul.appendChild(li2);
 	li2.innerHTML = album;
+	let deleteBtn = document.createElement('button');
+	deleteBtn.innerHTML = "Delete";
+	section.appendChild(deleteBtn);
+		deleteBtn.addEventListener('click',function()
+		{
+			getDiv.removeChild(section);
+		})
+}
+
+let loadMusic = function()
+{
+	let data = JSON.parse(event.target.responseText);
+	songs = data.songs;
+	console.log(songs);
+	songs.forEach(function(song)
+	{
+		addSong(song.name, song.artist, song.album);
+		
+	})
+}
+request.open("GET", "music.json");
+request.send();
+request.addEventListener('load', loadMusic);
+window.globalMusic = window.globalMusic || {};
+globalMusic.songs = songs;
 }
